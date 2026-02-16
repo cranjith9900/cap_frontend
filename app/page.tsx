@@ -33,7 +33,7 @@ export default async function BookstorePage() {
   }
 
   // 3. DELETE: Server Action
-  async function deleteBook(id) {
+  async function deleteBook(id: number) {
     "use server";
     await fetch(`http://20.207.199.193:4004/odata/v4/catalog/Books(${id})`, {
       method: "DELETE",
@@ -81,7 +81,7 @@ export default async function BookstorePage() {
       {/* READ & DELETE LIST */}
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">Current Inventory</h2>
-        {books.map((book) => (
+        {books.map((book: any) => (
           <div
             key={book.ID}
             className="flex justify-between items-center p-4 border-b"
